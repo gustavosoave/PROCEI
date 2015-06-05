@@ -19,13 +19,20 @@ namespace PROCEI
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            MDIPrincipal mdiPrincipal = new MDIPrincipal();
-            mdiPrincipal.Show();
-            Hide();
+            PROCEI.Controller.Login loginController = new PROCEI.Controller.Login();
+            loginController.usuario = txtUsuario.Text;
+            loginController.senha = txtSenha.Text;
 
-            CriptografiaCesar cc = new CriptografiaCesar();
-            cc.encripta("Admin");
-            cc.decripta(cc.encripta("Admin"));
-        }
+            if (loginController.doLogin())
+            {
+                MDIPrincipal mdiPrincipal = new MDIPrincipal();
+                mdiPrincipal.Show();
+                Hide();
+            }
+            else 
+            {
+                MessageBox.Show("Usuario ou senha invalidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }   
     }
 }

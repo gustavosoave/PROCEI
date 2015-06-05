@@ -74,7 +74,7 @@
             // 
             // pbCaptcha
             // 
-            this.pbCaptcha.Location = new System.Drawing.Point(196, 112);
+            this.pbCaptcha.Location = new System.Drawing.Point(136, 112);
             this.pbCaptcha.Name = "pbCaptcha";
             this.pbCaptcha.Size = new System.Drawing.Size(100, 50);
             this.pbCaptcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
