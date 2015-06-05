@@ -1,0 +1,8 @@
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.fmLogin.resources
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.MDIPrincipal.resources
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.Properties.Resources.resources
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.csproj.GenerateResource.Cache
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\bin\Debug\PROCEI.exe
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\bin\Debug\PROCEI.pdb
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.exe
+c:\users\gsoave\documents\visual studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.pdb
