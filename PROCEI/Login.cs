@@ -12,16 +12,21 @@ namespace PROCEI
 {
     public partial class fmLogin : Form
     {
+        PROCEI.Controller.Login loginController = new PROCEI.Controller.Login();
+        CaptchaItem ci;
+
         public fmLogin()
         {
             InitializeComponent();
+            mudaCaptcha();
         }
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            PROCEI.Controller.Login loginController = new PROCEI.Controller.Login();
-            loginController.usuario = txtUsuario.Text;
-            loginController.senha = txtSenha.Text;
+            loginController.Usuario = txtUsuario.Text;
+            loginController.Senha = txtSenha.Text;
+            loginController.TextCaptcha = txtCaptcha.Text;
+            
 
             if (loginController.doLogin())
             {
@@ -31,8 +36,19 @@ namespace PROCEI
             }
             else 
             {
-                MessageBox.Show("Usuario ou senha invalidos", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario, senha ou imagem incorretos!\nFavor tentar novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }   
+        }
+   
+        private void mudaCaptcha(){
+            loginController.Captcha = null;
+            ci = loginController.Captcha;
+            pbCaptcha.Image = ci.Imagem;
+        }
+
+        private void btAtualizaCaptcha_Click(object sender, EventArgs e)
+        {
+            mudaCaptcha();
+        }
     }
 }

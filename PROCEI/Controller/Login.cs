@@ -7,14 +7,23 @@ namespace PROCEI.Controller
 {
     class Login
     {
-        public String usuario { get; set; }
-        public String senha { get { return senha; } set { new CriptografiaCesar().encripta(value); } }
+        public String Usuario { get; set; }
+
+        private String senha;
+        public String Senha { get { return new CriptografiaCesar().decripta(senha); } set { senha = new CriptografiaCesar().encripta(value); } }
+
+        private CaptchaItem captcha;
+        public CaptchaItem Captcha { get { return captcha ; } set { captcha = new Captcha().sorteio(); } }
+
+        public String TextCaptcha { get; set; }
 
         public Boolean doLogin() {
 
-            if (usuario != "admin")
+            if (Usuario != "admin")
                 return false;
-            if (senha != new CriptografiaCesar().encripta("admin"))
+            if (Senha != "admin")
+                return false;
+            if (TextCaptcha != Captcha.Valor)
                 return false;
 
             return true;
