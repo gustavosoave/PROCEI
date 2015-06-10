@@ -23,6 +23,7 @@ namespace PROCEI
 
         private void btLogin_Click(object sender, EventArgs e)
         {
+           
             loginController.Usuario = txtUsuario.Text;
             loginController.Senha = txtSenha.Text;
             loginController.TextCaptcha = txtCaptcha.Text;
@@ -37,6 +38,7 @@ namespace PROCEI
             else 
             {
                 MessageBox.Show("Usuario, senha ou imagem incorretos!\nFavor tentar novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                mudaCaptcha();
             }
         }
    
