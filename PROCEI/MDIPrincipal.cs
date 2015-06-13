@@ -107,5 +107,22 @@ namespace PROCEI
         {
 
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            switch (MessageBox.Show(this, "Deseja fechar a aplicação?", "PROCEI",MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }

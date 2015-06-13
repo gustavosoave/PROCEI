@@ -16,7 +16,27 @@ namespace PROCEI.Controller
                 criaArquivo();
         }
 
-        public void lerArquivo() {
+        private void criaArquivo()
+        {
+
+            List<Login> logins = new List<Login>();
+
+            logins.Add(new Login() { Usuario = "master", Senha = "masterkey" });
+            logins.Add(new Login() { Usuario = "user", Senha = "userkey" });
+            logins.Add(new Login() { Usuario = "admin", Senha = "adminkey" });
+
+            foreach (Login l in logins)
+            {
+
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(caminhoArquivo, true))
+                {
+                    file.WriteLine("{0}:{1}", l.Usuario, l.Senha);
+                }
+
+            }
+        }
+
+        private void lerArquivo() {
             String linha = "";
             
             StreamReader file =   new StreamReader(caminhoArquivo);
@@ -29,35 +49,22 @@ namespace PROCEI.Controller
             file.Close();
         }
 
-        public Usuarios getUsuarioSenha(String usuarioParametro) {
-            
-            foreach(Usuarios u in usuarios){
-                if (usuarioParametro == u.Usuario) 
+
+        public Usuarios getUsuarioSenha(String usuarioParametro)
+        {
+
+            lerArquivo();
+
+            foreach (Usuarios u in usuarios)
+            {
+                if (usuarioParametro.ToUpper() == u.Usuario.ToUpper())
                 {
                     return u;
                 }
             }
 
             throw new Exception("Usuario Não Encontrado");
-            
-        }
 
-        private void criaArquivo() {
-
-            List<Login> logins = new List<Login>();
-
-            logins.Add(new Login() { Usuario = "master", Senha="masterkey" });
-            logins.Add(new Login() { Usuario = "user", Senha="userkey" });
-            logins.Add(new Login() { Usuario = "admin", Senha = "adminkey"});
-
-            foreach(Login l in logins){
-
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(caminhoArquivo, true))
-                {
-                    file.WriteLine("{0}:{1}", l.Usuario, l.Senha);
-                }
-
-            }
         }
 
     }

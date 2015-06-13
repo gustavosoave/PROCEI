@@ -131,11 +131,13 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lbSenha);
             this.Controls.Add(this.lbUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "fmLogin";
             this.ShowIcon = false;
             this.Text = "PROCEI";
+            this.Load += new System.EventHandler(this.fmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCaptcha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

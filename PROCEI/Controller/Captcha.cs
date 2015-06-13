@@ -7,7 +7,7 @@ namespace PROCEI.Controller
 {
     class Captcha
     {
-        CaptchaItem[] captchaItens = new CaptchaItem[10];
+        private CaptchaItem[] captchaItens = new CaptchaItem[10];
 
         public Captcha() 
         {

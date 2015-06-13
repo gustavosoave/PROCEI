@@ -22,12 +22,9 @@ namespace PROCEI.Controller
 
             Usuarios usuarioModel = new Usuarios();
 
-            String apagar = new CriptografiaCesar().encripta(senha);
-
             try
             {
                 ImportFile arquivoseguro = new ImportFile();
-                arquivoseguro.lerArquivo();
                 usuarioModel = arquivoseguro.getUsuarioSenha(Usuario);
             }
             catch
@@ -35,7 +32,7 @@ namespace PROCEI.Controller
                 return false;
             }
 
-            if (Usuario != usuarioModel.Usuario)
+            if (Usuario.ToUpper() != usuarioModel.Usuario.ToUpper())
                 return false;
             if (Senha != usuarioModel.Senha)
                 return false;

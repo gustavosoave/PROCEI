@@ -8,6 +8,7 @@ namespace PROCEI
 {
     static class Program
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +17,13 @@ namespace PROCEI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmLogin());
+            
+            fmLogin login = new fmLogin();
+            Application.Run(login);
+
+            //Somente executa se logado
+            if(login.logado)
+                Application.Run(new MDIPrincipal());
         }
     }
 }

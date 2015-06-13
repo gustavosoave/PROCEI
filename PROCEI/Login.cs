@@ -10,8 +10,10 @@ using PROCEI.Controller;
 
 namespace PROCEI
 {
+
     public partial class fmLogin : Form
     {
+        public Boolean logado = false;
         PROCEI.Controller.Login loginController = new PROCEI.Controller.Login();
         CaptchaItem ci;
 
@@ -31,9 +33,8 @@ namespace PROCEI
 
             if (loginController.doLogin())
             {
-                MDIPrincipal mdiPrincipal = new MDIPrincipal();
-                mdiPrincipal.Show();
-                Hide();
+                logado = true;
+                Close();
             }
             else 
             {
@@ -41,6 +42,7 @@ namespace PROCEI
                 mudaCaptcha();
             }
         }
+
    
         private void mudaCaptcha(){
             loginController.Captcha = null;
@@ -52,5 +54,11 @@ namespace PROCEI
         {
             mudaCaptcha();
         }
+
+        private void fmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -15,3 +15,4 @@ C:\Users\SOAVE\Documents\Visual Studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug
 C:\Users\SOAVE\Documents\Visual Studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.csproj.GenerateResource.Cache
 C:\Users\SOAVE\Documents\Visual Studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.exe
 C:\Users\SOAVE\Documents\Visual Studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.pdb
+C:\Users\SOAVE\Documents\Visual Studio 2010\Projects\PROCEI\PROCEI\obj\x86\Debug\PROCEI.csprojResolveAssemblyReference.cache
